@@ -30,7 +30,7 @@ public class JsonParser {
             String rowTitle = row.getString("title").equals("null") ? "" : row.getString("title");
             String rowDesc = row.getString("description").equals("null") ? "" : row.getString("description");
             //  To handle Picasso empty path exception, it not set to empty String
-            String rowImageHref = row.getString("imageHref");
+            String rowImageHref = row.getString("imageHref").equals("null") ? "" : row.getString("description");;
 
             ListItem rowData = new ListItem();
             rowData.setStrRowTitel(rowTitle);
@@ -39,7 +39,7 @@ public class JsonParser {
 
             //  Hiding the row if all the data of the row is null
 
-            if (!rowTitle.isEmpty() && !rowDesc.isEmpty() && !rowImageHref.equals("null")) {
+            if (!rowTitle.isEmpty() || !rowDesc.isEmpty() || !rowImageHref.isEmpty()) {
                 listItem.add(rowData);
             }
         }

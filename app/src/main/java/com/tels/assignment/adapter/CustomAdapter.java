@@ -6,6 +6,7 @@ package com.tels.assignment.adapter;
 
 import java.util.ArrayList;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,11 +15,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
 import com.tels.assignment.R;
 import com.tels.assignment.utility.ListItem;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
     private ArrayList<ListItem> mDataset;
+    private Context mContext;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -50,8 +53,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public CustomAdapter(ArrayList<ListItem> listData) {
+    public CustomAdapter(ArrayList<ListItem> listData,Context context) {
         mDataset = listData;
+        mContext=context;
     }
 
     // Create new views (invoked by the layout manager)
@@ -73,7 +77,19 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
        // final String name = mDataset.get(position);
         holder.tv_row_title.setText(mDataset.get(position).getStrRowTitel());
         holder.tv_row_desc.setText(mDataset.get(position).getStrRowDiscription());
-       //Here needs to add image item
+
+        if(!mDataset.get(position).getImgURL().isEmpty())
+        {
+            Picasso.with(mContext)
+                    .load(mDataset.get(position).getImgURL())
+                    .resize(300, 200)
+                    .centerCrop()
+                    .placeholder(R.drawable.no_thumb)
+                    .error(R.drawable.error_thumb)
+                    .into(holder.iv_row_img);
+        }
+
+        //Here needs to add image item
         // holder.iv_row_img.set
 
     }
