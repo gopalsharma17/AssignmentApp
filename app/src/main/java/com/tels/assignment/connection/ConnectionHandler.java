@@ -23,7 +23,7 @@ import java.net.URL;
 public class ConnectionHandler {
 
     InputStream inputStream;
-    JSONObject responceObjJson;
+    JSONObject responseObjJson;
 
     /***
      *This method is responsible for creating HttpUrlConnection
@@ -55,8 +55,8 @@ public class ConnectionHandler {
                     stringBuilder.append('\n');
                 }
 
-                responceObjJson = new JSONObject(stringBuilder.toString());
-                Log.d(Constants.TAG, "Response Json : "+responceObjJson.toString());
+                responseObjJson = new JSONObject(stringBuilder.toString());
+                Log.d(Constants.TAG, "Response Json : "+ responseObjJson.toString());
             }
         }
         catch (IOException e) {
@@ -64,6 +64,6 @@ public class ConnectionHandler {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return responceObjJson;
+        return responseObjJson;
     }
 }

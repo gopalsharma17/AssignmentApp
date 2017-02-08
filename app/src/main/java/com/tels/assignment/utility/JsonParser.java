@@ -27,7 +27,7 @@ public class JsonParser {
 
     public ArrayList parseJson(JSONObject jsonObject) {
         try{
-            JSONArray rows = jsonObject.getJSONArray("rows");
+            JSONArray rows = jsonObject.getJSONArray(Constants.ROW);
             Log.d(Constants.TAG, "Json Row size" + rows.length());
 
             listItem = new ArrayList<ListItem>();
