@@ -11,7 +11,7 @@ public class Constants {
 
     public static String TAG="AssignmentAPP";
     //Json Keys
-    public static String TITAL="title";
+    public static String TITLE ="title";
     public static String DISCRIPTION="description";
     public static String URL="imageHref";
     public static String ROW="rows";

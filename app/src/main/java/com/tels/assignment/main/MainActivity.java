@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
             try {
                 if(null != jsonObject) {
 
-                    actionBarTitle = jsonObject.getString(Constants.TITAL);
+                    actionBarTitle = jsonObject.getString(Constants.TITLE);
                     actionBar.setTitle(actionBarTitle);
                     alListItem =new ArrayList<ListItem>();
                     alListItem= new JsonParser().parseJson(jsonObject);

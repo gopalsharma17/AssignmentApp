@@ -36,7 +36,7 @@ public class JsonParser {
 
                 JSONObject row = rows.getJSONObject(iElementCount);
 
-                String rowTitle = row.getString(Constants.TITAL).equals("null") ? "" : row.getString(Constants.TITAL);
+                String rowTitle = row.getString(Constants.TITLE).equals("null") ? "" : row.getString(Constants.TITLE);
                 String rowDesc = row.getString(Constants.DISCRIPTION).equals("null") ? "" : row.getString(Constants.DISCRIPTION);
                 String rowImageHref = row.getString(Constants.URL).equals("null") ? "" : row.getString(Constants.URL);;
 
