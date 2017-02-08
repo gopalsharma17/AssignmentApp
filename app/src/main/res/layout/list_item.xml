@@ -6,7 +6,7 @@
         android:id="@+id/tv_row_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textColor="@color/colorPrimary" />
     <TextView
         android:id="@+id/tv_row_desc"
@@ -17,11 +17,16 @@
         android:layout_toLeftOf="@+id/iv_row_img" />
     <ImageView
         android:id="@id/iv_row_img"
-        android:layout_width="80dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_row_title"
         android:layout_alignParentRight="true"
         android:paddingRight="10dp"
         android:paddingBottom="10dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/vertical_divider"
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>

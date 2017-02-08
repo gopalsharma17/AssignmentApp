@@ -14,14 +14,22 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
- * Created by apple on 07/02/17.
+ * Created by Gopal on 07/02/17.
  */
 
+/***
+ * This class is responsible for making HttpURLConnection and server communication.
+ */
 public class ConnectionHandler {
 
     InputStream inputStream;
     JSONObject responceObjJson;
 
+    /***
+     *This method is responsible for creating HttpUrlConnection
+     * @param requestURL  Requested URL as a parameter
+     * @return Json object received in response
+     */
     public JSONObject httpURlConnectionRequest(URL requestURL) {
 
         try {
@@ -51,7 +59,7 @@ public class ConnectionHandler {
                 Log.d(Constants.TAG, "Response Json : "+responceObjJson.toString());
             }
         }
-         catch (IOException e) {
+        catch (IOException e) {
             e.printStackTrace();
         } catch (JSONException e) {
             e.printStackTrace();

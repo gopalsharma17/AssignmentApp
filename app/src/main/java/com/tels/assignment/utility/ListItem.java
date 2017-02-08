@@ -1,9 +1,12 @@
 package com.tels.assignment.utility;
 
 /**
- * Created by apple on 07/02/17.
+ * Created by Gopal on 07/02/17.
  */
 
+/***
+ * ListItem used in app for creating ListItem type array list
+ */
 public class ListItem {
     private String strRowTitel;
     private String strRowDiscription;
